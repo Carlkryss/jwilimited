@@ -1,0 +1,150 @@
+.fourth-section{
+  height: 88vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  transition: .5s all ease;
+}
+
+.projects-left{
+  background: #065A39;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: roboto;
+  padding: 5%;
+  padding-bottom: 0;
+  padding-top: 8%;
+  transition: .5s all ease;
+
+  position: relative;
+}
+
+.projects-left>h4{
+  font-size: 70px;
+  font-weight: lighter;
+  margin-bottom: 5%;
+  transition: .5s all ease-in-out;
+
+}
+
+.projects-text{
+  font-size: 16px;
+  width: 60%;
+  margin-bottom: 5%;
+  text-align: justify;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  transition: .5s all ease-in-out;
+
+}
+
+.project-btns{
+  width: 50%;
+  display: grid;
+  gap: 5%;
+  height: 7%;
+  grid-auto-flow: column;
+}
+
+.project-btns>button{
+  border: none;
+  outline: none;
+  font-weight: bold;
+  width: 90%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: roboto;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+  cursor: pointer;
+  transition: .5s all ease-in-out;
+
+}
+
+.active-project{
+  box-shadow: 0px -1px 5px 2px rgba(0, 0, 0, 0.4);
+  color: #065A39 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transform: scale(1.04);
+  transition: .5s all ease-in-out;
+  -webkit-box-shadow: 0px -1px 5px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px -1px 5px 2px rgba(0, 0, 0, 0.4);
+}
+
+.projects-right{
+  padding-left: 5%;
+  padding-right: 5%;
+  height:100%;
+  transition: .5s all ease;
+  gap: 7.5%;
+  display: grid;
+  grid-template-rows: 10% 60% 30%;
+}
+
+
+
+.projects-right>h4{
+  font-size: 30px;
+  font-family: roboto;
+  color: rgba(0,0,0,0.4);
+  margin-bottom: 5%;
+  transform-origin: right;
+  position: relative;
+  margin-top: 5%;
+  transition: .5s all ease-in-out;
+}
+
+.project-image-bg{
+  width: auto;
+  max-width: 30em;
+  display: grid;
+  margin: auto;
+  height: 100%;
+  max-height: 25em;
+  justify-self: center;
+  margin-bottom: 4%;
+  position: relative;
+}
+
+.project-image-bg::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 100%;
+}
+
+.image-selector{
+  display: grid;
+  position: relative;
+  grid-auto-flow: column;
+  height: 5em;
+  background-color: rgba(0,0,0,0.2);
+
+}
+
+.image-selector>img{
+  height: 5em;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-container{
+  position: relative;
+}
+
+.cover{
+  transform: scale(1, 1);
+  transform-origin: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.scale{
+  
+}

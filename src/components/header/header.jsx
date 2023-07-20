@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import Nav from '../nav/nav'
-import { motion, useScroll, useMotionValueEvent, useAnimate } from "framer-motion"
+import { motion, useScroll, useMotionValueEvent, useAnimate, easeIn } from "framer-motion"
 import { useInView } from 'framer-motion'
 import './header.css'
 
@@ -15,12 +15,28 @@ function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest> 80) {
       animate(scope.current,{transform:"translateX(-100px)"}, {duration:1})
-    }
-    else{
-      animate(scope.current,{transform:"translateX(0px)"}, {duration:1})
-    }
+      animate(scope.current,{boxShadow:"none"}, {duration:.5})
+      animate(scope.current,{opacity:"1"}, {duration:.5})
 
+
+    }
+    if (latest<80) {
+      animate(scope.current,{transform:"translateY(0px)"}, {duration:1},{ease:easeIn})
+      animate(scope.current,{transform:"translateX(0px)"}, {duration:1})
+
+    }
+    if (latest > 2200) {
+      animate(scope.current,{opacity:"0"}, {duration:.5})
+
+    }
   })
+
+
+
+  
+
+
+
 
   const handleNavClick = () => {
     changeNavState(!navState);

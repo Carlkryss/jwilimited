@@ -2,10 +2,18 @@
     height: 73vh;
     width: 100vw;
     display: grid;
+    position:relative;
     grid-template-columns: repeat(4, 1fr);
-background: black;
-background: linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(0,0,0,1) 22%, rgba(50,50,50,1) 100%);
+    background: rgba(0,0,0,1);
     background-size: cover;
+    z-index: 2;
+}
+
+
+
+.third-section:hover{
+    background: transparent;
+    transition: .1s all ease ;
 }
 
 .category-item{
@@ -16,10 +24,22 @@ background: linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(0,0,0,1) 22%, rgba(
     place-items: center;
     cursor: pointer;
     overflow: hidden;
+    z-index: 3;
+    transition: .3s all ease-in-out;
+    background: rgba(0,0,0,.5);
+}
+
+
+
+.category-item:hover{
+    transition: .3s all ease-in-out;
+
 }
 
 .category-item>*{
     position: absolute;
+    transition: .3s all ease-in-out;
+
 }
 
 
@@ -29,6 +49,8 @@ background: linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(0,0,0,1) 22%, rgba(
     font-weight: bold;
     color: rgba(255, 255, 255, 0.8);
     font-family: roboto;
+    transition: .3s all ease-in-out;
+
 }
 
 .category-item>.learn-more{
@@ -41,10 +63,29 @@ background: linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(0,0,0,1) 22%, rgba(
     height: 10%;
     font-weight: bold;
     transition: .6s all ease-in-out;
+
+}
+
+.category-item:hover>.title{
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
 }
 
 
 .category-item:hover>.learn-more{
     top: 80%;
     transition: .6s all ease;
+    transition: .3s all ease-in-out;
+
+}
+
+.category-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .1s all linear;
+
 }

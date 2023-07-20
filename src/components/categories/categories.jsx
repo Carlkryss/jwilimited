@@ -1,40 +1,123 @@
+import React, { useEffect, useRef, useState } from "react";
+import one from "../../assets/one.jpg";
+import two from "../../assets/two.jpg";
+import three from "../../assets/three.jpg";
+import four from "../../assets/four.jpg";
 import "./categories.css";
-import one from "../../assets/one.jpg"
-import { useState, useRef } from "react";
 
-const categories = () => {
+const Categories = () => {
+  const thirdSection = useRef(null);
+  // const categoryHeaders = [
+  //   "Installations and Upgrades",
+  //   "Repairs and Maintenance",
+  //   "Energy Efficient Solutions",
+  //   "Safety Inspections",
+  // ];
 
-    const thirdSection = useRef(null)
+  const [categoryState, setState] = useState({
+    i: null,
+    element: null,
+  });
+
+  const staticClass = "category-item";
 
   function categoryFunction(e) {
-
-    console.log(e.target.className)
-    if (e.target.className.includes("first")) {
-        thirdSection.current.style.backgroundSize = "cover"
-        thirdSection.current.style.background = "url("+ one + ")"
-    }
+    let element = e.currentTarget;
+    element.nextElementSibling.style.opacity = "1"
   }
+
+  
+  function fadeOut(e) {
+    let element = e.currentTarget;
+    element.nextElementSibling.style.opacity = "0"
+  }
+
+
+
+  // useEffect(() => {
+  //   // Preload the images
+  //   const images = [one, two, three, four];
+  //   images.forEach((image) => {
+  //     const img = new Image();
+  //     img.src = image;
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   if (categoryState.element) {
+  //     const parent = categoryState.element.parentElement;
+  //     const child = categoryState.element.firstChild;
+  //     switch (categoryState.i) {
+  //       case 0:
+  //         parent.style.background = `url(${one}) 100%/cover`;
+  //         break;
+  //       case 1:
+  //         parent.style.background = `url(${two}) 100%/cover`;
+  //         break;
+  //       case 2:
+  //         parent.style.background = `url(${three}) 100%/cover`;
+  //         break;
+  //       case 3:
+  //         parent.style.background = `url(${four}) 100%/cover`;
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   }
+  // }, [categoryState]);
 
   return (
     <section className="third-section" ref={thirdSection}>
-      <div className="category-item first" onMouseOver={(e) => categoryFunction(e)}>
-        <div className="title">Installations and Upgrades</div>
-        <button className="learn-more">Learn More</button>
-      </div>
-      <div className="category-item second" onMouseOver={(e) => categoryFunction(e)}>
-        <div className="title">Repairs and Maintenance</div>
-        <button className="learn-more">Learn More</button>
-      </div>
-      <div className="category-item third" onMouseOver={(e) => categoryFunction(e)}>
-        <div className="title">Energy Efficient Solutions</div>
-        <button className="learn-more">Learn More</button>
-      </div>
-      <div className="category-item fourth" onMouseOver={(e) => categoryFunction(e)}>
-        <div className="title">Safety Inspections</div>
-        <button className="learn-more">Learn More</button>
-      </div>
+        <div
+          className={`${staticClass}`}
+          onMouseOver={(e) => categoryFunction(e)}
+          onMouseOut={(e) => fadeOut(e)}
+        >
+          <div className="title">Installations and Upgrades</div>
+          <button className="learn-more">Learn More</button>
+        </div>
+
+        <div className="category-background" style={{background:"url("+one+") 100%/cover"}}></div>
+
+        <div
+          className={`${staticClass}`}
+          onMouseOver={(e) => categoryFunction(e)}
+          onMouseOut={(e) => fadeOut(e)}
+        >
+          <div className="title">Repairs and Maintenance</div>
+          <button className="learn-more">Learn More</button>
+        </div>
+
+        <div className="category-background" style={{background:"url("+two+") 100%/cover"}}></div>
+
+
+
+        <div
+          className={`${staticClass}`}
+          onMouseOver={(e) => categoryFunction(e)}
+          onMouseOut={(e) => fadeOut(e)}
+        >
+          <div className="title">Energy Efficient Solutions</div>
+          <button className="learn-more">Learn More</button>
+        </div>
+
+        <div className="category-background" style={{background:"url("+three+") 100%/cover"}}></div>
+
+
+        <div
+          className={`${staticClass}`}
+          onMouseOver={(e) => categoryFunction(e)}
+          onMouseOut={(e) => fadeOut(e)}
+        >
+          <div className="title">Safety Inspections</div>
+          <button className="learn-more">Learn More</button>
+        </div>
+
+        <div className="category-background" style={{background:"url("+four+") 100%/cover"}}></div>
+
+
     </section>
   );
 };
 
-export default categories;
+export default Categories;

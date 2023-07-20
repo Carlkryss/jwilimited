@@ -2,7 +2,6 @@ header{
     width: 100vw;
     height: 19vh;
     display: grid;
-    background: rgba(0, 0, 0, 0.5);
     align-items: center;
     grid-template-rows: 100%;
     gap: 0;
@@ -17,7 +16,7 @@ header{
     width: 5em;
     height: 90%;
     background-image: url("../../assets/logo.jpeg");
-    background-size: contain;
+    background-size: cover;
     display: grid;
     place-items: center;
     background-repeat: no-repeat;
