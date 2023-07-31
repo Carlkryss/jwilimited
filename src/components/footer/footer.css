@@ -5,7 +5,7 @@ footer{
     display: grid;
     place-items: center;
     position:relative;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     grid-auto-flow: rows;
     font-family: roboto;
@@ -16,7 +16,7 @@ footer{
 .footer-top{
     width: 100%;
     gap: 0%;
-    margin-left: 8%;
+    margin-left: 5%;
     margin-top: 3%;
     display: grid;
     height: 60%;
@@ -34,7 +34,9 @@ footer>*{
 
 .footer-top>.first-col{
     display: grid;
-    margin-right: 30%;
+    margin-right: 25%;
+    color: rgba(255, 255, 255, 0.8);
+
 }
 
 .footer-top>.second-col{

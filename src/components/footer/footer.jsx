@@ -1,16 +1,32 @@
-import "./footer.css"
-import logo from "../../assets/logo.jpeg";
+import "./footer.css"   
+import { useInView } from 'framer-motion'
+import { useRef, useEffect } from "react";
+
 
 
 const Footer = () => {
+    const footerRef = useRef(null)
+    const footerView = useInView(footerRef)
+
+
+
+  useEffect(() => {
+    if (footerView) {
+        document.getElementById("logo").style.opacity = 0
+    }
+    else{
+        document.getElementById("logo").style.opacity = 1
+    }
+  }, [footerView])
+
     return ( 
-        <footer>
+        <footer ref={footerRef}>
             <div className="footer-top">
             <div className="logo"></div>
             <div className="first-col">
-            <address><b>Address:</b> <em>Plot 194|199 Suite B33 Zara Plaza Life camp Abuja</em></address>
-            <div className="email"><em><b>Email:</b> </em>info@jwilimited.com</div>
-            <div className="phone"><em><b>Phone: </b></em>+2347043227212</div>
+            <address><b>Address:</b> Plot 194|199 Suite B33 Zara Plaza Life camp Abuja</address>
+            <div className="email"><b>Email:</b> info@jwilimited.com</div>
+            <div className="phone"><b>Phone: </b>+2347043227212</div>
             </div>
             <div className="second-col">
                 <span>Home</span>

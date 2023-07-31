@@ -23,7 +23,7 @@ import { useEffect } from "react";
 
 
 
-const Projects = () => {
+const ProjectsHome = () => {
 
 let officeArray = [ office2, office3, office4, office5]
 let hotelArray = [hotel1, hotel2, hotel3, hotel4, hotel5]
@@ -183,4 +183,4 @@ const switchImage = (e) => {
      );
 }
  
-export { Projects };
+export { ProjectsHome };

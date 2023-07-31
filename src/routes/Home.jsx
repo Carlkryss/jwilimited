@@ -4,7 +4,7 @@ import Hero from '../components/hero/hero'
 import Categories from '../components/categories/categories'
 import HeroAbout from '../components/heroAbout/heroabout'
 import { ContactHome } from '../components/contactHome/contactHome'
-import { Projects } from '../components/projects/projects'
+import { ProjectsHome } from '../components/projects/projects'
 import { Footer } from '../components/footer/footer'
 
 
@@ -20,7 +20,7 @@ function Home() {
       <HeroAbout></HeroAbout>
     </section>
     <Categories></Categories>
-    <Projects></Projects>
+    <ProjectsHome></ProjectsHome>
     <ContactHome></ContactHome>
     <Footer></Footer>
     </>

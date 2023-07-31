@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import video from "../../assets/giphy.gif"
 import './heroabout.css'
 
 function HeroAbout() {

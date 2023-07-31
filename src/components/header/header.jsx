@@ -16,17 +16,12 @@ function Header() {
     if (latest> 80) {
       animate(scope.current,{transform:"translateX(-100px)"}, {duration:1})
       animate(scope.current,{boxShadow:"none"}, {duration:.5})
-      animate(scope.current,{opacity:"1"}, {duration:.5})
 
 
     }
     if (latest<80) {
       animate(scope.current,{transform:"translateY(0px)"}, {duration:1},{ease:easeIn})
       animate(scope.current,{transform:"translateX(0px)"}, {duration:1})
-
-    }
-    if (latest > 2200) {
-      animate(scope.current,{opacity:"0"}, {duration:.5})
 
     }
   })
@@ -46,7 +41,7 @@ function Header() {
   return (
     <>
       <header ref={logoref}>
-      <motion.div ref={scope} className='logo'
+      <motion.div ref={scope} className='logo' id='logo'
       style={{
         transform: logoview ? "none" : "translateX(-200px)",
         opacity: logoview ? 1 : 0,

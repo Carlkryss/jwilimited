@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { useInView } from 'framer-motion'
+
 import './hero.css'
 
 function Hero() {

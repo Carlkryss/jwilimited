@@ -50,7 +50,9 @@
 }
 
 .ha-right{
+    background-image: url("../../assets/wires.webp");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
 }
+

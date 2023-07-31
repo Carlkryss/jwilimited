@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useAnimate, stagger, easeInOut } from "framer-motion"
+import { Link } from 'react-router-dom';
 import "./nav.css";
 
 function Nav(props) {
@@ -78,11 +79,12 @@ function Nav(props) {
   return (
     <nav ref={navscope}>
       <ul ref={scope}>
-        <li>HOME</li>
-        <li>SERVICES</li>
-        <li>PROJECTS</li>
-        <li>ABOUT</li>
-        <li>CONTACT</li>
+        <Link to="/"><li>HOME</li></Link>
+        <Link to="/services"><li>SERVICES</li></Link>
+        <Link to="/projects"><li>PROJECTS</li></Link>
+        <Link to="/about"><li>ABOUT US</li></Link>
+        <Link to="/contact"><li>CONTACT</li></Link>
+
       </ul>
     </nav>
   );
