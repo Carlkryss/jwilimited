@@ -1,6 +1,7 @@
 import "./footer.css"   
 import { useInView } from 'framer-motion'
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -29,11 +30,11 @@ const Footer = () => {
             <div className="phone"><b>Phone: </b>+2347043227212</div>
             </div>
             <div className="second-col">
-                <span>Home</span>
-                <span>Services</span>
-                <span>Projects</span>
-                <span>About us</span>
-                <span>Contact us</span>
+            <Link to="/"><span>HOME</span></Link>
+        <Link to="/services"><span>SERVICES</span></Link>
+        <Link to="/projects"><span>PROJECTS</span></Link>
+        <Link to="/about"><span>ABOUT US</span></Link>
+        <Link to="/contact"><span>CONTACT</span></Link>
             </div>
             </div>
 
