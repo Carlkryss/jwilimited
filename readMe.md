@@ -1,1 +1,1 @@
-A website for an electrical company with 5 pages 
+A website for an electrical company
