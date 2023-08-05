@@ -9,6 +9,7 @@
     color: white;
     z-index: 2;
     font-family: roboto;
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
@@ -30,6 +31,7 @@
 }
 
 .contact-container{
+    display: -ms-grid;
     display: grid;
     place-items: center;
     gap: 50%;
@@ -40,4 +42,10 @@
     background-color: green;
     width: 10em;
     padding: 3%;
+}
+
+@media screen and (max-width: 800px) {
+    .contactHome{
+        height: 40vh;
+    }
 }

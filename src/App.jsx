@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Home from './routes/Home'
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Services from "./routes/Services"
 import About from "./routes/About"
 import Projects from "./routes/Projects"
@@ -26,7 +26,7 @@ function App() {
 window.addEventListener('scroll', throttle(throttle, 200));
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
       <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path="/services" element={<Services></Services>}></Route>
@@ -36,7 +36,7 @@ window.addEventListener('scroll', throttle(throttle, 200));
 
 
       </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }

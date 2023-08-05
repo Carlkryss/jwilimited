@@ -2,10 +2,10 @@ import { useState, useRef } from 'react'
 import Header from '../components/header/header'
 import { Footer } from '../components/footer/footer'
 import { Main } from '../components/main/main'
-import one from "../assets/one.jpg";
-import two from "../assets/two.jpg"
-import three from "../assets/three.jpg"
-import four from "../assets/four.jpg"
+import one from "../assets/one.webp";
+import two from "../assets/two.webp"
+import three from "../assets/three.webp"
+import four from "../assets/four.webp"
 import { useScroll, motion, useInView } from "framer-motion"
 import { useEffect } from 'react';
 import { ContactHome } from '../components/contactHome/contactHome'

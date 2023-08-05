@@ -1,22 +1,28 @@
 nav{
+    display: -ms-grid;
     display: grid;
     background-color: black;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
-    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
     left: 0;
-    z-index: 3;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
     place-items: center;
     font-family: roboto;
     font-weight: bold;
 }
 
 .openNav{
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -27,6 +33,7 @@ ul{
 li{
     list-style-type: none;
     color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     padding: 0;
@@ -38,7 +45,9 @@ li{
 }
 
 li:hover{
+    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     color: rgba(255, 255, 255, 1)
 }
+
 

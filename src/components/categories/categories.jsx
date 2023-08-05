@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import one from "../../assets/one.jpg";
-import two from "../../assets/two.jpg";
-import three from "../../assets/three.jpg";
-import four from "../../assets/four.jpg";
+import one from "../../assets/one.webp";
+import two from "../../assets/two.webp";
+import three from "../../assets/three.webp";
+import four from "../../assets/four.webp";
 import "./categories.css";
 
 const Categories = () => {

@@ -4,11 +4,16 @@
 }
 
 .hero-about{
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 55% 45%;
+    -ms-grid-columns: 55% 45%;
+        grid-template-columns: 55% 45%;
     height: 100%;
-    justify-content: center;
-    align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     font-family: roboto;
 }
 
@@ -18,6 +23,8 @@
 }
 
 .ha-left{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     place-items: center;
     padding: 15%;
@@ -56,3 +63,20 @@
     height: 100%;
 }
 
+@media screen and (max-width: 800px) {
+    .ha-right{
+        display: none;
+    }
+    .second-section{
+        height: 100% !important;
+    }
+    .hero-about{
+        -ms-grid-columns: 100%;
+            grid-template-columns: 100%;
+    }
+    .ha-left{
+        padding: 5%;
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+  }

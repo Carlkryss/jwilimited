@@ -1,72 +1,109 @@
 header{
-    width: 100vw;
-    height: 19vh;
-    display: grid;
-    align-items: center;
-    grid-template-rows: 100%;
-    gap: 0;
-    padding-left: 8%;
-    position: fixed;
-    top:0;
-    z-index: 3;
-    grid-template-columns: 90% 10%;
+  width: 100vw;
+  height: 19vh;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 100%;
+  gap: 0;
+  padding-left: 8%;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 5;
+  grid-template-columns: 90% 10%;
+  overflow-y: auto;
 }
 
 .logo{
-    width: 5.2em;
-    height: 90%;
-    background-image: url("../../assets/logo.jpeg");
-    background-size: cover;
-    display: grid;
-    place-items: center;
-    background-repeat: no-repeat;
-    color: white;
+  width: 5.2em;
+  height: 90%;
+  background-image: url("../../assets/logo.webp");
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
 
-    font-weight: bold;
-    position: relative;
-    z-index: 5;
+}
+
+.logoshift{
+  
+  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+
 }
 
 .hj {
-  cursor: pointer;
-  position: relative;
-  z-index: 5;
+cursor: pointer;
+position: relative;
+z-index: 5;
 }
 
 .hamburg {
-  display: flex;
+display: flex;
+z-index: 6;
 }
 
 .hj,
 .top,
 .middle,
 .bottom {
-  transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
 }
 
 .hamburg.active .hj .top,
 .hj:focus .top {
-    transform: rotate(45deg);
-    transform-origin: center top;
-    x: 37.5px;
-    y: 26.25px;
+  transform: rotate(45deg);
+  transform-origin: center top;
+  x: 37.5px;
+  y: 26.25px;
 }
 
 .hamburg.active .hj .middle,
 .hj:focus .middle {
-    opacity: 0;
-    x: 0;
+  opacity: 0;
+  x: 0;
 }
 
 
 .rect{
-  fill: white;
+fill: white;
 }
 
 .hamburg.active .hj .bottom,
 .hj:focus .bottom {
-    transform: rotate(-45deg);
-    transform-origin: center top;
-    x: -15px;
-    y: 18.75px;
+  transform: rotate(-45deg);
+  transform-origin: center top;
+  x: -15px;
+  y: 18.75px;
 }
+
+
+@media screen and (max-width: 800px) {
+.logo {
+  width: 5.2em;
+  height: 78%;
+}
+.hamburg{
+  transform: scale(1.2);
+}
+
+header{
+  padding-left: 0;
+}
+}
+
+@media screen and (max-width: 351px) {
+  .logo {
+    width: 5.2em;
+    height: 76%;
+  }
+  .hamburg{
+    transform: scale(1.3);
+  }
+
+
+  }

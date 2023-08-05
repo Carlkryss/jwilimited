@@ -1,11 +1,15 @@
 .hero{
     height: 35em;
     width: 100%;
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     z-index: 2;
-    grid-template-rows: 5% 90% 5%;
+    -ms-grid-rows: 5% 90% 5%;
+        grid-template-rows: 5% 90% 5%;
     margin-top: 0;
     padding-top: 11em;
 }
@@ -15,6 +19,8 @@
     position: relative;
     font-size: 19px;
     margin-left: 9%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 3px;
     padding-bottom: 0;
@@ -29,10 +35,26 @@
     width: 10px;
     height: 1px;
     background-color: lightgreen;
-    animation-name: move;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-delay: 3s;
+    -webkit-animation-name: move;
+            animation-name: move;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+}
+
+@-webkit-keyframes move{
+    0%{
+        left: 0%;
+    }
+    50%{
+        left: 80%;
+    }
+    100%{
+        left: 0%;
+    }
 }
 
 @keyframes move{
@@ -63,36 +85,78 @@
 .hero-text>span{
     padding: 0;
     height: 65px;
-    display: block;
+    display: inline-block;
+    margin-right: 25px;
     overflow: hidden;
 }
 
 
 .scroll-down{
+    display: -ms-grid;
     display: grid;
     margin-left: 10%;
     font-size: 20px;
     width: 10em;
-    gap: 0;
-    align-items: center;
-    grid-template-columns: 30% 60%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: 30% 60%;
+        grid-template-columns: 30% 60%;
     gap: 5%;
     cursor: pointer;
+    margin-top: 5%;
 }
 
 .scroll-down:hover>.scroll{
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: .8s all ease;
     transition: .8s all ease;
 }
 
 .scroll{
     background-color: #065A39;
     width: 2.5em;
+    -webkit-transition: .8s all ease;
     transition: .8s all ease;
 
     height: 2.5em;
     border-radius: 50%;
+    display: -ms-grid;
     display: grid;
     place-items: center;
 
 }
+
+@media screen and (max-width: 800px) {
+
+    .hero{
+        height: 33em;
+        padding-top: 16em;
+        grid-template-rows: 20% 52% 34%;
+    }
+    .hero-text {
+      width: 90%;
+      font-size: 45px;
+      height: 100%;
+    }
+
+    .hero-text>span{
+        height: 48px;
+        display: inline-block;
+        margin-right: 25px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .hero{
+        padding-top: 12em;
+        grid-template-rows: 20% 65% 34%;
+    }
+  }
+
+  @media screen and (max-width: 353px) {
+        .hero{
+            height: 40em;
+        }
+    }

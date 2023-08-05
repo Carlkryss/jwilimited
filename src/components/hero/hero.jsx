@@ -18,19 +18,27 @@ function Hero() {
       <span style={{
         paddingTop: isInView ? "0" : "64px",
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s",
-      }}>Electrify your</span>
+      }}>Electrify </span>
+      <span style={{
+        paddingTop: isInView ? "0" : "64px",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s",
+      }}> your </span>
       <span style={{
         paddingTop: isInView ? "0" : "64px",
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.8s",
-      }}> space,</span>
+      }}> space, </span>
       <span style={{
         paddingTop: isInView ? "0" : "64px",
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2.2s",
-      }}> Illuminate your </span>
+      }}> Illuminate </span>
       <span style={{
         paddingTop: isInView ? "0" : "64px",
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2.6s",
-      }}>world</span>
+      }}> your </span>
+      <span style={{
+        paddingTop: isInView ? "0" : "64px",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2.8s",
+      }}> world </span>
     </div>
     
     <div className="scroll-down"  style={{

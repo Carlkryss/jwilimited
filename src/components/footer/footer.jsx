@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="footer-top">
             <div className="logo"></div>
             <div className="first-col">
-            <address><b>Address:</b> Plot 194|199 Suite B33 Zara Plaza Life camp Abuja</address>
+            <b>Address:</b> Plot 194|199 Suite B33 Zara Plaza Life camp Abuja
             <div className="email"><b>Email:</b> info@jwilimited.com</div>
             <div className="phone"><b>Phone: </b>+2347043227212</div>
             </div>

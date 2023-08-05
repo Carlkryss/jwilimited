@@ -1,33 +1,38 @@
 import "./projects.css"
+import React from "react";
 import { useAnimate, useInView } from "framer-motion"
+import { useMemo } from "react";
 import { useState, useRef } from "react";
-import office from "../../assets/office.jpg";
-import school from "../../assets/school.jpg";
-import hotel from "../../assets/hotel.jpg";
-import hotel1 from "../../assets/hotel1.jpg"
-import hotel2 from "../../assets/hotel2.jpg"
-import hotel3 from "../../assets/hotel3.jpg"
-import hotel4 from "../../assets/hotel6.jpg"
-import hotel5 from "../../assets/hotel5.jpg" 
-import school1 from "../../assets/school1.jpg"
-import school2 from "../../assets/school2.jpg"
-import school3 from "../../assets/school3.jpg"
-import school4 from "../../assets/school4.jpg"
-import school5 from "../../assets/school5.jpg"
-import office2 from "../../assets/office2.jpg"
-import office3 from "../../assets/office3.jpg"
-import office4 from "../../assets/office4.jpg"
+import office from "../../assets/office.webp";
+import school from "../../assets/school.webp";
+import hotel from "../../assets/hotel.webp";
+import hotel1 from "../../assets/hotel1.webp"
+import hotel2 from "../../assets/hotel2.webp"
+import hotel3 from "../../assets/hotel3.webp"
+import hotel4 from "../../assets/hotel6.webp"
+import hotel5 from "../../assets/hotel5.webp" 
+import school1 from "../../assets/school1.webp"
+import school2 from "../../assets/school2.webp"
+import school3 from "../../assets/school3.webp"
+import school4 from "../../assets/school4.webp"
+import school5 from "../../assets/school5.webp"
+import office2 from "../../assets/office2.webp"
+import office3 from "../../assets/office3.webp"
+import office4 from "../../assets/office4.webp"
 import office5 from "../../assets/office1.webp"
 import { useEffect } from "react";
 
 
 
 
-const ProjectsHome = () => {
+const ProjectsHome = React.memo(() => {
 
-let officeArray = [ office2, office3, office4, office5]
-let hotelArray = [hotel1, hotel2, hotel3, hotel4, hotel5]
-let schoolArray = [school1, school2, school3, school4, school5] 
+    
+
+    const officeArray = useMemo(() => [office2, office3, office4, office5], []);
+    const hotelArray = useMemo(() => [hotel1, hotel2, hotel3, hotel4, hotel5], []);
+    const schoolArray = useMemo(() => [school1, school2, school3, school4, school5], []);
+    
 
 let [imageArray, setArray] = useState(officeArray)
 let [currentImage, setCurrImage] = useState(imageArray[4])
@@ -52,22 +57,7 @@ function hideTitle() {
     changeTitle(title.current, { transform:"scale(1, 1)"}, { duration: .5 },{ ease: "ease" })
 }
 
-function hidePicker(){
-    changePicker(picker.current, { transform:"scale(1, 1)"}, { duration: .8 },{ ease: "ease" })
 
-}
-
-useEffect(() => {
-    if (imageInView) {
-      changeImage(bigImage.current, { transform:"scale(0, 1)"}, { duration: 1 },{ ease: "ease" })
-    }
-    if (titleInView) {
-        changeTitle(title.current, { transform:"scale(0, 1)"}, { duration: 1 },{ ease: "ease" })
-      }
-      if (pickerInView) {
-        changePicker(picker.current, { transform:"scale(0, 1)"}, { duration: 1 },{ ease: "ease" })
-      }
- }, [imageInView, titleInView, pickerInView])
 
 
 
@@ -77,7 +67,6 @@ function changeToOffice(){
     office.current.classList.add("active-project")
     hideImages()
     hideTitle()
-    hidePicker()
 
     setTimeout(() => {
         setArray(officeArray)
@@ -105,7 +94,6 @@ function changeToSchool(){
     office.current.classList.remove("active-project")
     hideImages()
     hideTitle()
-    hidePicker()
 
     setTimeout(() => {
         setArray(schoolArray)
@@ -124,7 +112,6 @@ function changeToHotel(){
     office.current.classList.remove("active-project")
     hideTitle()
     hideImages()
-    hidePicker()
 
     setTimeout(() => {
         setArray(hotelArray)
@@ -167,7 +154,7 @@ const switchImage = (e) => {
                 </div>
             </div>
             <div className="projects-right">
-            <h4 >{projectTitle} <div className="cover" ref={title}></div></h4>
+            <h4 >{projectTitle} <div ref={title}></div></h4>
                 <div className="image-container">
                 <img src={currentImage} alt="" className="project-image-bg" />
                 <div ref={bigImage}  className="cover image-cover"></div>
@@ -176,11 +163,10 @@ const switchImage = (e) => {
                     {imageArray.map((image, index)=>(
                         <img key={index} src={image} onClick={(e)=>switchImage(e)}/>
                     ))}
-                    <div className="cover" ref={picker}></div>
                 </div>
             </div>
         </section>
-     );
-}
+    )
+});
  
 export { ProjectsHome };
