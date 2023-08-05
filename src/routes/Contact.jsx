@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import Header from '../components/header/header'
 import { Footer } from '../components/footer/footer'
+import ScrollToTopOnMount from './scrollTo';
 import { Main } from '../components/main/main'
 import background from "../assets/background1.webp"
 
 function Contact() {
   return (
+   
     <section className='contact-section'>
+       <ScrollToTopOnMount></ScrollToTopOnMount>
       <Header></Header>
       <Main background={background} title="CONTACT US"></Main>
       <div className="contactp-container">
@@ -29,15 +32,10 @@ function Contact() {
             </div>
             <div className="fourth-row">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="textarea" cols="30" rows="80"></textarea>
+              <textarea name="message" id="textarea" cols="10" rows="20"></textarea>
             </div>
             <button className='contact-button' name='submit'>Send Message</button>
           </form>
-        </div>
-        <div className="contact-right">
-          <div className="floating-banner">
-            We will get back to you within one business day
-          </div>
         </div>
       </div>
       <div className="gap"></div>

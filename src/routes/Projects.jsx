@@ -5,10 +5,13 @@ import { Main } from '../components/main/main'
 import background from "../assets/electric2.webp"
 import { ContactHome } from '../components/contactHome/contactHome'
 import { ProjectsHome } from '../components/projects/projects'
+import ScrollToTopOnMount from './scrollTo';
+
 
 function Projects() {
   return (
     <>
+        <ScrollToTopOnMount></ScrollToTopOnMount>
         <Header></Header>
       <Main background={background} title="PROJECTS"></Main>
       <div className="projects-container">

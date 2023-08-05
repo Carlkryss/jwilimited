@@ -33,8 +33,6 @@ window.addEventListener('scroll', throttle(throttle, 200));
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/projects" element={<Projects></Projects>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
-
-
       </Routes>
       </HashRouter>
     </>

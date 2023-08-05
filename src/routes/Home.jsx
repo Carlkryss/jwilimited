@@ -6,11 +6,14 @@ import HeroAbout from '../components/heroAbout/heroabout'
 import { ContactHome } from '../components/contactHome/contactHome'
 import { ProjectsHome } from '../components/projects/projects'
 import { Footer } from '../components/footer/footer'
+import ScrollToTopOnMount from './scrollTo';
+
 
 
 function Home() {
   return (
     <>
+    <ScrollToTopOnMount/>
     <section className='first-section'>
     <Header></Header>
     <Hero></Hero>

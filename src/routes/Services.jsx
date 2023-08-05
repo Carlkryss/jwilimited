@@ -9,6 +9,8 @@ import four from "../assets/four.webp"
 import { useScroll, motion, useInView } from "framer-motion"
 import { useEffect } from 'react';
 import { ContactHome } from '../components/contactHome/contactHome'
+import ScrollToTopOnMount from './scrollTo';
+
 
 
 
@@ -28,6 +30,7 @@ function Services() {
 
   return (
     <>
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <Header></Header>
       <Main background={one} title={"SERVICES"}></Main>
       <section className="services">

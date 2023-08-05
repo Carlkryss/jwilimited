@@ -177,6 +177,7 @@
     padding-bottom: 10%;
   }
   .projects-text{
+    text-align: left;
     width: 90%;
     font-size: 20px;
   }

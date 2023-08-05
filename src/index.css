@@ -162,7 +162,7 @@ About us */
   display: grid;
   width: 100%;
   -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 70% 30%;
   height: 44em;
   padding-top: 0;
 }
@@ -208,16 +208,28 @@ label{
   color: rgba(0, 0, 0, 0.8);
 }
 
+a{
+  color: white;
+  text-decoration: none;
+}
 
 input, textarea{
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   width: 80%;
+  font-size: 18px;
+  font-family: roboto;
+  color: rgba(0, 0, 0, 0.8);
+
 }
 
 input:focus, textarea:focus{
   border-bottom: 1px solid royalblue;
+}
+
+textarea{
+  padding-top: 5%;
 }
 
 .fourth-row{
@@ -247,18 +259,9 @@ input:focus, textarea:focus{
 
 .gap{
   display: block;
-  height:5em;
+  height:10em;
 }
 
-.contact-right{
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-}
-
-.floating-banner{
-  
-}
 
 
 @media screen and (max-width: 800px) {
@@ -301,8 +304,27 @@ input:focus, textarea:focus{
 
 @media screen and (max-width: 452px) {
   .service-text{
-    height: 30em;
     grid-template-rows: 50% 40%;
     gap: 10%;
+  }
+  .service-item{
+    padding-bottom: 5em;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .service-item{
+    padding-bottom: 7em;
+    height: 35em;
+  }
+}
+
+@media screen and (max-width: 491px) {
+
+  .contactp-container{
+    grid-template-columns: 80% 20%;
+  }
+  .contact-header{
+    width: 100%;
   }
 }
