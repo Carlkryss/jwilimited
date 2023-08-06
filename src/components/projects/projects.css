@@ -212,6 +212,7 @@
 @media screen and (max-width: 493px) {
   .projects-left{
     height: 40em;
+    padding-bottom: 2em;
   }
 }
 
