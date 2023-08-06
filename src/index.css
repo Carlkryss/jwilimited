@@ -34,6 +34,13 @@ body{
 
 }
 
+@media screen and (max-width: 800px) {
+  .first-section{
+  background: url("./assets/back2m.png");
+
+  }  
+}
+
 .second-section{
   height: 80vh;
   width: 100vw;
