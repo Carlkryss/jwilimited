@@ -216,6 +216,13 @@
   }
 }
 
+@media screen and (max-width: 385px) {
+  .projects-left{
+    height: 45em;
+    padding-bottom: 2em;
+  }
+}
+
 @media screen and (max-width: 353px) {
   .projects-left{
       height: 45em;
