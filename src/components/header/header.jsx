@@ -25,6 +25,16 @@ function Header() {
     }
   })
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if(latest> 80){
+      animate(scope.current,{opacity:.02}, {duration:1}) 
+    }
+
+    if (latest<80) {
+      animate(scope.current,{opacity:1}, {duration:1}) 
+    }
+  })
+
   const handleNavClick = () => {
     changeNavState(!navState);
   };

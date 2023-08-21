@@ -6,6 +6,7 @@ import Services from "./routes/Services"
 import About from "./routes/About"
 import Projects from "./routes/Projects"
 import Contact from "./routes/Contact"
+import {SanityDataProvider}  from "./context/FetchContext"
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 window.addEventListener('scroll', throttle(throttle, 200));
   return (
     <>
+      <SanityDataProvider >
       <HashRouter>
       <Routes>
           <Route path='/' element={<Home></Home>}></Route>
@@ -35,6 +37,7 @@ window.addEventListener('scroll', throttle(throttle, 200));
           <Route path="/contact" element={<Contact></Contact>}></Route>
       </Routes>
       </HashRouter>
+      </SanityDataProvider >
     </>
   )
 }

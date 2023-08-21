@@ -9,6 +9,7 @@ function Hero() {
   const isInView = useInView(ref, { once: true })
 
   return (
+
     <>
     <div className="hero" ref={ref}>
     <h3 className='hero-title'  style={{

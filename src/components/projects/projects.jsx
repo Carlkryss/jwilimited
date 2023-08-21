@@ -1,41 +1,61 @@
 import "./projects.css"
 import React from "react";
 import { useAnimate, useInView } from "framer-motion"
-import { useMemo } from "react";
 import { useState, useRef } from "react";
-import office from "../../assets/office.webp";
-import school from "../../assets/school.webp";
-import hotel from "../../assets/hotel.webp";
-import hotel1 from "../../assets/hotel1.webp"
-import hotel2 from "../../assets/hotel2.webp"
-import hotel3 from "../../assets/hotel3.webp"
-import hotel4 from "../../assets/hotel6.webp"
-import hotel5 from "../../assets/hotel5.webp" 
-import school1 from "../../assets/school1.webp"
-import school2 from "../../assets/school2.webp"
-import school3 from "../../assets/school3.webp"
-import school4 from "../../assets/school4.webp"
-import school5 from "../../assets/school5.webp"
-import office2 from "../../assets/office2.webp"
-import office3 from "../../assets/office3.webp"
-import office4 from "../../assets/office4.webp"
-import office5 from "../../assets/office1.webp"
 import { useEffect } from "react";
+import imageUrlBuilder from '@sanity/image-url'
+import { useSanityData } from '../../context/FetchContext'
 
 
 
 
 const ProjectsHome = React.memo(() => {
 
-    
+    const sanityData = useSanityData();
+    const imageBuilder = imageUrlBuilder({
+        projectId: 'ltj2mz49',
+        dataset: 'jwilimited',
+      });
 
-    const officeArray = useMemo(() => [office2, office3, office4, office5], []);
-    const hotelArray = useMemo(() => [hotel1, hotel2, hotel3, hotel4, hotel5], []);
-    const schoolArray = useMemo(() => [school1, school2, school3, school4, school5], []);
-    
+      
+let [imageArray, setArray] = useState(null)
+let [currentImage, setCurrImage] = useState(null)
 
-let [imageArray, setArray] = useState(officeArray)
-let [currentImage, setCurrImage] = useState(imageArray[4])
+const [officeArray, setOfficeArray] = useState([]);
+const [schoolArray, setSchoolArray] = useState([]);
+const [hotelArray, setHotelArray] = useState([]);
+
+useEffect(() => {
+  if (sanityData && sanityData.result) {
+    const newOfficeArray = [];
+    const newSchoolArray = [];
+    const newHotelArray = [];
+    for (let i = 0; i < sanityData.result[0].officeimages.length; i++) {
+      const element = sanityData.result[0].officeimages[i].asset._ref;
+      newOfficeArray.push(imageBuilder.image(element).url());
+    }
+    for (let i = 0; i < sanityData.result[0].schoolimages.length; i++) {
+      const element = sanityData.result[0].schoolimages[i].asset._ref;
+      newSchoolArray.push(imageBuilder.image(element).url());
+    }
+    for (let i = 0; i < sanityData.result[0].hotelimages.length; i++) {
+      const element = sanityData.result[0].hotelimages[i].asset._ref;
+      newHotelArray.push(imageBuilder.image(element).url());
+    }
+    setOfficeArray(newOfficeArray);
+    setSchoolArray(newSchoolArray)
+    setHotelArray(newHotelArray)
+    setArray(officeArray)
+    imageArray && setCurrImage(imageArray[0])
+  }
+}, [sanityData]);
+
+
+
+
+
+
+
 
 const office = useRef(null)
 const school = useRef(null)
@@ -153,18 +173,23 @@ const switchImage = (e) => {
 
                 </div>
             </div>
-            <div className="projects-right">
-            <h4 >{projectTitle} <div ref={title}></div></h4>
-                <div className="image-container">
-                <img src={currentImage} alt="" className="project-image-bg" />
-                <div ref={bigImage}  className="cover image-cover"></div>
-                </div>
-                <div  className="image-selector">
-                    {imageArray.map((image, index)=>(
-                        <img key={index} src={image} onClick={(e)=>switchImage(e)}/>
-                    ))}
-                </div>
-            </div>
+            
+  {sanityData.result && (
+    <div className="projects-right">
+      <h4>{projectTitle} <div ref={title}></div></h4>
+      <div className="image-container">
+        <img src={currentImage} alt="" className="project-image-bg" />
+        <div ref={bigImage}  className="cover image-cover"></div>
+      </div>
+      <div className="image-selector">
+        {imageArray && imageArray.map((image, index) => (
+          <img key={index} src={image} onClick={(e) => switchImage(e)} />
+        ))}
+      </div>
+      </div>
+  )}
+
+
         </section>
     )
 });

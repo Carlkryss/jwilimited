@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import {Link} from "react-router-dom"
 import './heroabout.css'
+import { useSanityData } from '../../context/FetchContext'
 
 function HeroAbout() {
+  const sanityData = useSanityData();
   return (
     <>
       <div className="hero-about" id="about">
         <div className="ha-left">
-          <h3>Illuminate Your <br /> World with JWILIMITED</h3>
-          <p>Let us be your partner in harnessing the power of electricity to propel your success. Whether you're building a new structure, renovating an existing space, or seeking energy-efficient solutions, we have the knowledge and expertise to turn your vision into reality.</p>
+          <h3>{sanityData && sanityData.result && sanityData.result[0].secondSectionTitle}</h3>
+          <p>{sanityData && sanityData.result && sanityData.result[0].secondSectionText}</p>
           <Link to="/about"><button className="about-btn">About us</button></Link>
         </div>
         <div className="ha-right">
