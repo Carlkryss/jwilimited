@@ -45,7 +45,7 @@
 }
 
 .project-btns{
-  width: 50%;
+  width: 70%;
   display: -ms-grid;
   display: grid;
   gap: 5%;
@@ -171,6 +171,8 @@
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     height: auto;
+    overflow: hidden;
+    
   }
   .projects-left{
     height: 35em;
@@ -220,6 +222,9 @@
   .projects-left{
     height: 45em;
     padding-bottom: 2em;
+  }
+  .fourth-section{
+    overflow: hidden;
   }
 }
 

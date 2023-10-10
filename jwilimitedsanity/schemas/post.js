@@ -111,5 +111,60 @@ export default defineType({
       title: 'About us Text second',
       type: 'string',
     }),
+    defineField({
+      name: "galleryimages1",
+      type: "array",
+      title: "Gallery Images 1 column",
+      of: [
+        defineArrayMember({
+          type: 'image',
+          name: 'gallery Image',
+        })
+      ]
+    }),
+    defineField({
+      name: "galleryimages2",
+      type: "array",
+      title: "Gallery Images 2 column",
+      of: [
+        defineArrayMember({
+          type: 'image',
+          name: 'gallery Image',
+        })
+      ]
+    }),
+    defineField({
+      name: "galleryimages3",
+      type: "array",
+      title: "Gallery Images 3 column",
+      of: [
+        defineArrayMember({
+          type: 'image',
+          name: 'gallery Image',
+        })
+      ]
+    }),
+    defineField({
+      name: "galleryimages4",
+      type: "array",
+      title: "Gallery Images 4 column",
+      of: [
+        defineArrayMember({
+          type: 'image',
+          name: 'gallery Image',
+        })
+      ]
+    }),
+    defineField({
+      name: "galleryimages5",
+      type: "array",
+      title: "Gallery Images 5 column",
+      of: [
+        defineArrayMember({
+          type: 'image',
+          name: 'gallery Image',
+        })
+      ]
+    }),
   ],
 })

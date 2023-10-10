@@ -5,6 +5,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Services from "./routes/Services"
 import About from "./routes/About"
 import Projects from "./routes/Projects"
+import Gallery from './routes/Gallery';
 import Contact from "./routes/Contact"
 import {SanityDataProvider}  from "./context/FetchContext"
 
@@ -35,6 +36,8 @@ window.addEventListener('scroll', throttle(throttle, 200));
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/projects" element={<Projects></Projects>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
+          <Route path="/gallery" element={<Gallery></Gallery>}></Route>
+
       </Routes>
       </HashRouter>
       </SanityDataProvider >

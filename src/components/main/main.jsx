@@ -18,7 +18,7 @@ function Main(props) {
         <div className="page-title" ref={headerRef}>
         <span 
         style={{
-          paddingTop: headerView ? "0" : "64px",
+          paddingTop: headerView ? "0" : "100%",
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.4s",
         }}
         >{props.title}</span></div>

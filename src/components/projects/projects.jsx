@@ -45,10 +45,16 @@ useEffect(() => {
     setOfficeArray(newOfficeArray);
     setSchoolArray(newSchoolArray)
     setHotelArray(newHotelArray)
-    setArray(officeArray)
     imageArray && setCurrImage(imageArray[0])
   }
 }, [sanityData]);
+
+
+useEffect(() => {
+
+  hotelArray && setArray(hotelArray)
+
+}, [hotelArray]);
 
 
 
@@ -66,7 +72,7 @@ const [picker, changePicker] = useAnimate()
 const imageInView = useInView(bigImage)
 const titleInView = useInView(title)
 const pickerInView = useInView(picker)
-const [projectTitle, setProjectTitle] = useState("Offices")
+const [projectTitle, setProjectTitle] = useState("Residential")
 
 function hideImages(){
     changeImage(bigImage.current, { transform:"scale(1, 1)"}, { duration: .8 },{ ease: "ease" })
@@ -93,7 +99,7 @@ function changeToOffice(){
     }, 750);
 
     setTimeout(() => {
-    setProjectTitle("Offices")
+    setProjectTitle("Residential")
    
     changeTitle(title.current, { transform:"scale(0, 1)"}, { duration: .8 },{ ease: "ease" })
     changePicker(picker.current, { transform:"scale(0, 1)"}, { duration: .8 },{ ease: "ease" })
@@ -167,9 +173,10 @@ const switchImage = (e) => {
                 From residential renovations and commercial installations to large-scale industrial ventures, our dedicated team has consistently surpassed expectations. We bring together the perfect blend of technical prowess, innovative solutions, and meticulous attention to detail to ensure project success.
                 </p>
                 <div className="project-btns">
-                    <button ref={office} onClick={changeToOffice} className="first active-project">OFFICES</button>
+                    <button ref={office} onClick={changeToOffice} className="first active-project">RESIDENTIAL</button>
                     <button ref={school} onClick={changeToSchool} className="second">SCHOOLS</button>
                     <button ref={hotel} onClick={changeToHotel} className="third">HOTELS</button>
+                    
 
                 </div>
             </div>

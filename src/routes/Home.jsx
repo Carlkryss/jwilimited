@@ -6,6 +6,7 @@ import HeroAbout from '../components/heroAbout/heroabout'
 import { ContactHome } from '../components/contactHome/contactHome'
 import { ProjectsHome } from '../components/projects/projects'
 import { Footer } from '../components/footer/footer'
+import  Cert  from "../components/cert/cert";
 import ScrollToTopOnMount from './scrollTo';
 import imageUrlBuilder from '@sanity/image-url'
 import { useSanityData } from '../context/FetchContext'
@@ -49,6 +50,7 @@ function Home() {
     </section>
     <Categories></Categories>
     <ProjectsHome></ProjectsHome>
+    <Cert></Cert>
     <ContactHome></ContactHome>
     <Footer></Footer>
     </>

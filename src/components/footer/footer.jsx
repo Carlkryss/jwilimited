@@ -8,7 +8,6 @@ const Footer = () => {
     const footerRef = useRef(null);
     const footerView = useInView(footerRef);
     const sanityData = useSanityData();
-
     useEffect(() => {
         if (footerView) {
             document.getElementById("logo").style.opacity = 0;
@@ -16,7 +15,6 @@ const Footer = () => {
             document.getElementById("logo").style.opacity = 1;
         }
     }, [footerView]);
-
     return (
         sanityData.result && (
             <footer ref={footerRef}>
@@ -37,12 +35,11 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <div className="copyright">Copyright @ jwilimited.com</div>
+                    <div className="copyright">Copyright @ jwilimitedng.com</div>
                     <span>Website designed and built by Carlkristie</span>
                 </div>
             </footer>
         )
     );
 }
-
 export { Footer };
